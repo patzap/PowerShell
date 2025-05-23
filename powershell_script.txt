@@ -1,0 +1,47 @@
+PS C:\Windows\system32> Set-Service -Name sshd -StartupType 'Automatic'                                                                                                                                                                      PS C:\Windows\system32> Get-NetFirewallRule -Name *ssh*                                                                                                                                                                                      
+
+Name                  : OpenSSH-Server-In-TCP
+DisplayName           : OpenSSH SSH Server (sshd)
+Description           : Inbound rule for OpenSSH SSH Server (sshd)
+DisplayGroup          : OpenSSH Server
+Group                 : OpenSSH Server
+Enabled               : True
+Profile               : Any
+Platform              : {}
+Direction             : Inbound
+Action                : Allow
+EdgeTraversalPolicy   : Block
+LooseSourceMapping    : False
+LocalOnlyMapping      : False
+Owner                 :
+PrimaryStatus         : OK
+Status                : The rule was parsed successfully from the store. (65536)
+EnforcementStatus     : NotApplicable
+PolicyStoreSource     : PersistentStore
+PolicyStoreSourceType : Local  
+
+PS C:\Windows\system32> New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22                                                                       
+
+Name                  : sshd
+DisplayName           : OpenSSH Server (sshd)
+Description           :
+DisplayGroup          :
+Group                 :
+Enabled               : True
+Profile               : Any
+Platform              : {}
+Direction             : Inbound
+Action                : Allow
+EdgeTraversalPolicy   : Block
+LooseSourceMapping    : False
+LocalOnlyMapping      : False
+Owner                 :
+PrimaryStatus         : OK
+Status                : The rule was parsed successfully from the store. (65536)
+EnforcementStatus     : NotApplicable
+PolicyStoreSource     : PersistentStore
+PolicyStoreSourceType : Local
+
+
+
+PS C:\Windows\system32> State : Installed          

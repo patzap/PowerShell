@@ -1,0 +1,152 @@
+**********************
+PowerShell transcript start
+Start time: 20191214162508
+Username: LAPTOP-TKR6M1AE\flame
+RunAs User: LAPTOP-TKR6M1AE\flame
+Configuration Name: 
+Machine: LAPTOP-TKR6M1AE (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Program Files\PowerShell\7-preview\pwsh.dll -WorkingDirectory ~
+Process ID: 29084
+PSVersion: 7.0.0-preview.6
+PSEdition: Core
+GitCommitId: 7.0.0-preview.6
+OS: Microsoft Windows 10.0.18362
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\Users\flame\Documents\Powershell\masterclass_remote.txt
+PS C:\Users\flame> # Goal of powershell is to provide centralized management of an entire IT environmnet
+PS C:\Users\flame> # RPC (Remote procedure call)
+PS C:\Users\flame> echo  "Goal of powershell is to provide centralized management of an entire IT environmnet"
+Goal of powershell is to provide centralized management of an entire IT environmnet
+PS C:\Users\flame> $env:computername
+LAPTOP-TKR6M1AE
+PS C:\Users\flame> get-psdrive
+
+Name           Used (GB)     Free (GB) Provider      Root                                                                                                                                          CurrentLocation
+----           ---------     --------- --------      ----                                                                                                                                          ---------------
+Alias                                  Alias
+C                  75.70        336.86 FileSystem    C:\                                                                                                                                               Users\flame
+Cert                                   Certificate   \
+Env                                    Environment
+Function                               Function
+HKCU                                   Registry      HKEY_CURRENT_USER
+HKLM                                   Registry      HKEY_LOCAL_MACHINE
+Temp               75.70        336.86 FileSystem    C:\Users\flame\AppData\Local\Temp\
+Variable                               Variable
+WSMan                                  WSMan
+
+PS C:\Users\flame> get-help invoke-command
+
+NAME
+    Invoke-Command
+
+SYNOPSIS
+    Runs commands on local and remote computers.
+
+
+SYNTAX
+    Invoke-Command [[-ConnectionUri] <Uri[]>] [-ScriptBlock] <ScriptBlock> [-AllowRedirection] [-ArgumentList <Object[]>] [-AsJob] [-Authentication {Basic | Default | Credssp | Digest | Kerberos | Negotiate |
+    NegotiateWithImplicitCredential}] [-CertificateThumbprint <String>] [-ConfigurationName <String>] [-Credential <PSCredential>] [-EnableNetworkAccess] [-HideComputerName] [-InDisconnectedSession]
+    [-InputObject <PSObject>] [-JobName <String>] [-RemoteDebug] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    Invoke-Command [[-ConnectionUri] <Uri[]>] [-FilePath] <String> [-AllowRedirection] [-ArgumentList <Object[]>] [-AsJob] [-Authentication {Basic | Default | Credssp | Digest | Kerberos | Negotiate |
+    NegotiateWithImplicitCredential}] [-ConfigurationName <String>] [-Credential <PSCredential>] [-EnableNetworkAccess] [-HideComputerName] [-InDisconnectedSession] [-InputObject <PSObject>] [-JobName
+    <String>] [-RemoteDebug] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    Invoke-Command [[-ComputerName] <String[]>] [-ScriptBlock] <ScriptBlock> [-ApplicationName <String>] [-ArgumentList <Object[]>] [-AsJob] [-Authentication {Basic | Default | Credssp | Digest | Kerberos |
+    Negotiate | NegotiateWithImplicitCredential}] [-CertificateThumbprint <String>] [-ConfigurationName <String>] [-Credential <PSCredential>] [-EnableNetworkAccess] [-HideComputerName]
+    [-InDisconnectedSession] [-InputObject <PSObject>] [-JobName <String>] [-Port <Int32>] [-RemoteDebug] [-SessionName <String[]>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [-UseSSL]
+    [<CommonParameters>]
+
+    Invoke-Command [[-ComputerName] <String[]>] [-FilePath] <String> [-ApplicationName <String>] [-ArgumentList <Object[]>] [-AsJob] [-Authentication {Basic | Default | Credssp | Digest | Kerberos | Negotiate
+    | NegotiateWithImplicitCredential}] [-ConfigurationName <String>] [-Credential <PSCredential>] [-EnableNetworkAccess] [-HideComputerName] [-InDisconnectedSession] [-InputObject <PSObject>] [-JobName
+    <String>] [-Port <Int32>] [-RemoteDebug] [-SessionName <String[]>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [-UseSSL] [<CommonParameters>]
+
+    Invoke-Command [[-Session] <PSSession[]>] [-FilePath] <String> [-ArgumentList <Object[]>] [-AsJob] [-HideComputerName] [-InputObject <PSObject>] [-JobName <String>] [-RemoteDebug] [-ThrottleLimit <Int32>]
+    [<CommonParameters>]
+
+    Invoke-Command [-ScriptBlock] <ScriptBlock> [[-Session] <PSSession[]>] [-ArgumentList <Object[]>] [-AsJob] [-HideComputerName] [-InputObject <PSObject>] [-JobName <String>] [-RemoteDebug] [-ThrottleLimit
+    <Int32>] [<CommonParameters>]
+
+    Invoke-Command [-ScriptBlock] <ScriptBlock> [-VMId] <Guid[]> [-ArgumentList <Object[]>] [-AsJob] [-ConfigurationName <String>] [-Credential <PSCredential>] [-HideComputerName] [-InputObject <PSObject>]
+    [-RemoteDebug] [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    Invoke-Command [-ScriptBlock] <ScriptBlock> [-ArgumentList <Object[]>] [-AsJob] [-ConfigurationName <String>] [-Credential <PSCredential>] [-HideComputerName] [-InputObject <PSObject>] [-RemoteDebug]
+    [-ThrottleLimit <Int32>] -VMName <String[]> [<CommonParameters>]
+
+    Invoke-Command [-VMId] <Guid[]> [-FilePath] <String> [-ArgumentList <Object[]>] [-AsJob] [-ConfigurationName <String>] [-Credential <PSCredential>] [-HideComputerName] [-InputObject <PSObject>]
+    [-RemoteDebug] [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    Invoke-Command [-FilePath] <String> [-ArgumentList <Object[]>] [-AsJob] [-ConfigurationName <String>] [-Credential <PSCredential>] [-HideComputerName] [-InputObject <PSObject>] [-RemoteDebug]
+    [-ThrottleLimit <Int32>] -VMName <String[]> [<CommonParameters>]
+
+    Invoke-Command [-ScriptBlock] <ScriptBlock> [-ArgumentList <Object[]>] [-AsJob] [-HideComputerName] -HostName <String[]> [-InputObject <PSObject>] [-KeyFilePath <String>] [-Port <Int32>] [-RemoteDebug]
+    [-SSHTransport {true}] [-UserName <String>] [<CommonParameters>]
+
+    Invoke-Command [-FilePath] <String> [-ArgumentList <Object[]>] [-AsJob] [-ConfigurationName <String>] -ContainerId <String[]> [-HideComputerName] [-InputObject <PSObject>] [-JobName <String>]
+    [-RemoteDebug] [-RunAsAdministrator] [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    Invoke-Command [-ScriptBlock] <ScriptBlock> [-ArgumentList <Object[]>] [-AsJob] [-ConfigurationName <String>] -ContainerId <String[]> [-HideComputerName] [-InputObject <PSObject>] [-JobName <String>]
+    [-RemoteDebug] [-RunAsAdministrator] [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    Invoke-Command [-ScriptBlock] <ScriptBlock> [-ArgumentList <Object[]>] [-AsJob] [-HideComputerName] [-InputObject <PSObject>] [-RemoteDebug] -SSHConnection <Hashtable[]> [<CommonParameters>]
+
+    Invoke-Command [-FilePath] <String> [-ArgumentList <Object[]>] [-AsJob] [-HideComputerName] -HostName <String[]> [-InputObject <PSObject>] [-KeyFilePath <String>] [-RemoteDebug] [-SSHTransport {true}]
+    [-UserName <String>] [<CommonParameters>]
+
+    Invoke-Command [-FilePath] <String> [-ArgumentList <Object[]>] [-AsJob] [-HideComputerName] [-InputObject <PSObject>] [-RemoteDebug] -SSHConnection <Hashtable[]> [<CommonParameters>]
+
+    Invoke-Command [-ScriptBlock] <ScriptBlock> [-ArgumentList <Object[]>] [-InputObject <PSObject>] [-NoNewScope] [<CommonParameters>]
+
+
+DESCRIPTION
+    The `Invoke-Command` cmdlet runs commands on a local or remote computer and returns all output from the commands, including errors. Using a single `Invoke-Command` command, you can run commands on multiple
+    computers.
+
+    To run a single command on a remote computer, use the ComputerName parameter. To run a series of related commands that share data, use the `New-PSSession` cmdlet to create a PSSession (a persistent
+    connection) on the remote computer, and then use the Session parameter of `Invoke-Command` to run the command in the PSSession . To run a command in a disconnected session, use the InDisconnectedSession
+    parameter. To run a command in a background job, use the AsJob parameter.
+
+    You can also use `Invoke-Command` on a local computer to a script block as a command. PowerShell runs the script block immediately in a child scope of the current scope.
+
+    Before using `Invoke-Command` to run commands on a remote computer, read about_Remote (./About/about_Remote.md).
+
+    Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke commands on remote computers. SSH must be installed on the local computer and the remote computer must be
+    configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShell remote session is that it will work across multiple platforms (Windows, Linux, macOS). For SSH based session you use the
+    HostName or SSHConnection parameters to specify the remote computer and relevant connection information. For more information about how to set up PowerShell SSH remoting, see PowerShell Remoting Over SSH
+    (/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+
+    Some code samples use splatting to reduce the line length. For more information, see about_Splatting (./About/about_Splatting.md).
+
+
+RELATED LINKS
+    Online Version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-6&WT.mc_id=ps-gethelp
+    about_PSSessions
+    about_Remote
+    about_Remote_Disconnected_Sessions
+    about_Remote_Troubleshooting
+    about_Remote_Variables
+    about_Scopes
+    Enter-PSSession
+    Exit-PSSession
+    Get-PSSession
+    Invoke-Item
+    New-PSSession
+    Remove-PSSession
+    WSMan Provider
+
+REMARKS
+    To see the examples, type: "Get-Help Invoke-Command -Examples"
+    For more information, type: "Get-Help Invoke-Command -Detailed"
+    For technical information, type: "Get-Help Invoke-Command -Full"
+    For online help, type: "Get-Help Invoke-Command -Online"
+
+PS C:\Users\flame> exit
+**********************
+PowerShell transcript end
+End time: 20191214172130
+**********************

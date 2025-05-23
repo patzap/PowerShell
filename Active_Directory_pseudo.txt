@@ -1,0 +1,18 @@
+Powershell script
+
+-What I would like it to do
+
+
+Domain Summary
+
+Parameters -> OUs, Servers, AD Users
+
+List / View domain name, name of DC, number of OUs present, number of members in the domain
+
+-Create 
+
+-Control statement -> would like to add a new server/computer to domain?
+
+-Control statement -> would like to create a new OU in the domain?
+
+-

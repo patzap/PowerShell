@@ -1,0 +1,435 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191205142309
+Username: LAPTOP-TKR6M1AE\flame
+RunAs User: LAPTOP-TKR6M1AE\flame
+Configuration Name: 
+Machine: LAPTOP-TKR6M1AE (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14688
+PSVersion: 5.1.18362.145
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.145
+BuildVersion: 10.0.18362.145
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\flame\Documents\Powershell\powershell_ex2.txt
+PS C:\> get-help mysql
+get-help : Get-Help could not find mysql in a help file in this session. To download updated help topics type: 
+"Update-Help". To get help online, search for the help topic in the TechNet library at 
+https:/go.microsoft.com/fwlink/?LinkID=107116.
+At line:1 char:1
++ get-help mysql
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [Get-Help], HelpNotFoundException
+    + FullyQualifiedErrorId : HelpNotFound,Microsoft.PowerShell.Commands.GetHelpCommand
+get-help : Get-Help could not find mysql in a help file in this session. To download updated help topics type:
+"Update-Help". To get help online, search for the help topic in the TechNet library at
+https:/go.microsoft.com/fwlink/?LinkID=107116.
+At line:1 char:1
++ get-help mysql
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [Get-Help], HelpNotFoundException
+    + FullyQualifiedErrorId : HelpNotFound,Microsoft.PowerShell.Commands.GetHelpCommand
+
+PS C:\> Test-Port
+Test-Port : The term 'Test-Port' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Test-Port
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Test-Port:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Test-Port : The term 'Test-Port' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Test-Port
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Test-Port:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\> help-update test-port
+help-update : The term 'help-update' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ help-update test-port
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (help-update:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+help-update : The term 'help-update' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ help-update test-port
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (help-update:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\> mysql -uroot -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+PS C:\> Invoke-MySqlQuery -Query 'SELECT' * FROM staff;
+Invoke-MySqlQuery : The term 'Invoke-MySqlQuery' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ Invoke-MySqlQuery -Query 'SELECT' * FROM staff;
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Invoke-MySqlQuery:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Invoke-MySqlQuery : The term 'Invoke-MySqlQuery' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ Invoke-MySqlQuery -Query 'SELECT' * FROM staff;
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Invoke-MySqlQuery:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\> get-help Get-Credential
+
+NAME
+    Get-Credential
+
+SYNOPSIS
+    Gets a credential object based on a user name and password.
+
+
+SYNTAX
+    Get-Credential [-Credential] <PSCredential> [<CommonParameters>]
+
+    Get-Credential [[-UserName] <String>] -Message <String> [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-Credential cmdlet creates a credential object for a specified user name and password. You can use the
+    credential object in security operations.
+
+    Beginning in Windows PowerShell 3.0, you can use the Message parameter to specify a customized message on the
+    dialog box that prompts the user for their name and password.
+
+    The Get-Credential cmdlet prompts the user for a password or a user name and password. By default, an
+    authentication dialog box appears to prompt the user. However, in some host programs, such as the Windows
+    PowerShell console, you can prompt the user at the command line by changing a registry entry. For more information
+    about this registry entry, see the notes and examples.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821713
+
+REMARKS
+    To see the examples, type: "get-help Get-Credential -examples".
+    For more information, type: "get-help Get-Credential -detailed".
+    For technical information, type: "get-help Get-Credential -full".
+    For online help, type: "get-help Get-Credential -online"
+
+
+PS C:\> get-help Get-Credential -examples
+
+NAME
+    Get-Credential
+
+SYNOPSIS
+    Gets a credential object based on a user name and password.
+
+
+    Example 1: Get a credential and save it
+
+    PS C:\>$C = Get-Credential
+
+    This command gets a credential object and saves it in the $C variable.
+
+    When you enter the command, a dialog box appears requesting a user name and password. When you enter the requested
+    information, the cmdlet creates a PSCredential object representing the credentials of the user and saves it in the
+    $C variable.
+
+    You can use the object as input to cmdlets that request user authentication, such as those with a Credential
+    parameter. However, some providers that are installed with Windows PowerShell do not support the Credential
+    parameter.
+    Example 2: Store a credential in a variable to use with another command
+
+    PS C:\>$C = Get-Credential
+    PS C:\>Get-WmiObject Win32_DiskDrive -ComputerName "Server01" -Credential $C
+
+    These commands use a PSCredential object that the Get-Credential cmdlet returns to authenticate a user on a remote
+    computer so they can use Windows Management Instrumentation (WMI) to manage the computer.
+
+    The first command gets a PSCredential object and saves it in the $C variable. The second command uses the
+    credential object in a Get-WmiObject command. This command gets information about the disk drives on the Server01
+    computer.
+    Example 3: Get a credential to use for Windows Management Instrumentation
+
+    PS C:\>Get-WmiObject Win32_BIOS -ComputerName "Server01" -Credential (Get-Credential -Credential Domain01\User01)
+
+    This command shows how to include a Get-Credential command in a Get-WmiObject command.
+
+    This command uses the Get-WmiObject cmdlet to get information about the BIOS on the Server01 computer. It uses the
+    Credential parameter to authenticate the user, Domain01\User01, and a Get-Credential command as the value of the
+    Credential parameter.
+    Example 4: Get a credential by name
+
+    PS C:\>$C = Get-Credential -Credential User01
+    PS C:\>$C.Username
+    \User01
+
+    This example creates a credential that includes a user name without a domain name. It demonstrates that
+    Get-Credential inserts a backslash before the user name.
+
+    The first command gets a credential with the user name User01 and stores it in the $C variable.
+
+    The second command displays the value of the Username property of the resulting PSCredential object.
+    Example 5: Use the PromptForCredential method to get a credential
+
+    PS C:\>$Credential = $Host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.",
+    "", "NetBiosUserName")
+
+    This command uses the PromptForCredential method to prompt the user for their user name and password. The command
+    saves the resulting credentials in the $Credential variable.
+
+    The PromptForCredential method is an alternative to using the Get-Credential cmdlet. When you use
+    PromptForCredential, you can specify the caption, messages, and user name that appear in the message box.
+    Example 6: Set the ConsolePrompting registry entry to prompt for credentials
+
+    PS C:\>Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds" -Name "ConsolePrompting" -Value $True
+
+    This example shows how to modify the registry so that the user is prompted at the command line instead of using a
+    dialog box.
+
+    The command creates the ConsolePrompting registry entry and sets its value to $True. To run this command, start
+    Windows PowerShell with the "Run as administrator" option.
+
+    To use a dialog box for prompting, set the value of the ConsolePrompting registry entry to $False, or use the
+    Remove-ItemProperty cmdlet to delete it.
+
+    The ConsolePrompting registry entry works in some host programs, such as the Windows PowerShell console. It might
+    not work in all host programs.
+    Example 7: Create a credential without prompting the user
+
+    PS C:\>$User = "Domain01\User01"
+
+    The second command uses the ConvertTo-SecureString cmdlet to create a secure string from a plain text password.
+    The command uses the *AsPlainText* parameter to indicate that the string is plain text and the *Force* parameter
+    to confirm that you understand the risks of using plain text.
+    PS C:\>$PWord = ConvertTo-SecureString -String "P@sSwOrd" -AsPlainText -Force
+
+    The third command uses the New-Object cmdlet to create a **PSCredential** object from the values in the $User and
+    $PWord variables.
+    PS C:\>$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User, $PWord
+
+    This example shows how to create a PSCredential object that is identical to the object that Get-Credential returns
+    without prompting the user. This method requires a plain text password, which might violate the security standards
+    in some enterprises.
+
+    The first command saves the user account name in the $User variable. The value must have the Domain\User or
+    ComputerName\User format.
+    Example 8: Get a credential from a shared script or function
+
+    PS C:\>Get-Credential -Message "Credentials are required for access to the \\Server1\Scripts file share."
+    -UserName "Server01\PowerUsers"
+    Windows PowerShell
+
+    Credentials are required for access to the \\Server1\Scripts file share.
+
+    Password for user ntdev\pattif:
+
+    This command uses the Message and UserName parameters of the Get-Credential cmdlet. This command format is
+    designed for shared scripts and functions. In this case, the message tells the user why credentials are needed and
+    gives them confidence that the request is legitimate.
+    Example 9: Get a credential for a user on a remote computer
+
+    PS C:\>Invoke-Command -ComputerName "Server01" {Get-Credential Domain01\User02}
+    Windows PowerShell Credential Request : Windows PowerShell Credential Request
+    Warning: This credential is being requested by a script or application on the SERVER01 remote computer. Enter your
+    credentials only if you
+    trust the remote computer and the application or script requesting it.
+
+
+    Enter your credentials.
+
+    Password for user Domain01\User02: ***************
+
+
+    PSComputerName     : Server01
+    RunspaceId         : 422bdf52-9886-4ada-ab2f-130497c6777f
+    PSShowComputerName : True
+    UserName           : Domain01\User01
+    Password           : System.Security.SecureString
+
+    This command gets a credential from the Server01 remote computer. The command uses the Invoke-Command cmdlet to
+    run a Get-Credential command on the remote computer. The output shows the remote security message that
+    Get-Credential includes in the authentication prompt.
+
+
+
+PS C:\>  Invoke-WebRequest  -Uri https://github.com/adbertram/MySQL/archive/master.zip -OutFile  'C:\MySQL.zip'
+PS C:\> $modulesFolder = 'C:\Program Files\WindowsPowerShell\Modules'
+PS C:\> Expand-Archive -Path C:\MySQL.zip -DestinationPath $modulesFolder
+PS C:\> Rename-Item -Path "C:\Program Files\WindowsPowerShell\Modules\MySQL-master\" -NewName MySQL
+PS C:\> $dbCred = Get-Credential
+PS C:\> Connect-MySqlServer -Credential $dbcred -ComputerName 'MYSQLSERVER' -Database SyngergyLogistics
+PS C:\> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts."
+Connect-MySqlServer : Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL
+hosts."
+At line:1 char:1
++ Connect-MySqlServer -Credential $dbcred -ComputerName 'MYSQLSERVER' - ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-MySqlServer
+
+PS C:\> Connect-MySqlServer -Credential $dbcred -ComputerName 'patzap' -Database SyngergyLogistics
+PS C:\> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts."
+Connect-MySqlServer : Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL
+hosts."
+At line:1 char:1
++ Connect-MySqlServer -Credential $dbcred -ComputerName 'patzap' -Datab ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-MySqlServer
+
+PS C:\> Connect-MySqlServer -Credential $dbcred -ComputerName 'patzap' -Database workplace;
+PS C:\> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts."
+Connect-MySqlServer : Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL
+hosts."
+At line:1 char:1
++ Connect-MySqlServer -Credential $dbcred -ComputerName 'patzap' -Datab ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-MySqlServer
+
+PS C:\> Connect-MySqlServer -Credential $dbcred -ComputerName 'root' -Database workplace;
+PS C:\> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts."
+Connect-MySqlServer : Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL
+hosts."
+At line:1 char:1
++ Connect-MySqlServer -Credential $dbcred -ComputerName 'root' -Databas ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-MySqlServer
+
+PS C:\> Connect-MySqlServer -Credential $dbcred -ComputerName 'patzap'
+PS C:\> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts."
+Connect-MySqlServer : Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL
+hosts."
+At line:1 char:1
++ Connect-MySqlServer -Credential $dbcred -ComputerName 'patzap'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-MySqlServer
+
+PS C:\> get-help Connect-MysqlServer
+
+NAME
+    Connect-MySqlServer
+
+SYNOPSIS
+    Connect to a MySQL Server
+
+
+SYNTAX
+    Connect-MySqlServer [-Credential] <PSCredential> [[-ComputerName] <String>] [[-Port] <Int32>] [[-Database]
+    <String>] [[-CommandTimeOut] <Int32>] [[-ConnectionTimeOut] <Int32>] [<CommonParameters>]
+
+
+DESCRIPTION
+    This function will establish a connection to a local or remote instance of
+    a MySQL Server. By default it will connect to the local instance on the
+    default port.
+
+
+RELATED LINKS
+    https://github.com/jeffpatton1971/mod-posh/wiki/MySQL#Connect-MySqlServer
+
+REMARKS
+    To see the examples, type: "get-help Connect-MySqlServer -examples".
+    For more information, type: "get-help Connect-MySqlServer -detailed".
+    For technical information, type: "get-help Connect-MySqlServer -full".
+    For online help, type: "get-help Connect-MySqlServer -online"
+
+
+PS C:\> get-help Connect-MysqlServer -showwindows
+>> TerminatingError(Get-Help): "A parameter cannot be found that matches parameter name 'showwindows'."
+Get-Help : A parameter cannot be found that matches parameter name 'showwindows'.
+At line:1 char:30
++ get-help Connect-MysqlServer -showwindows
++                              ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Help], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetHelpCommand
+Get-Help : A parameter cannot be found that matches parameter name 'showwindows'.
+At line:1 char:30
++ get-help Connect-MysqlServer -showwindows
++                              ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Help], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetHelpCommand
+
+PS C:\> get-help Connect-MysqlServer -ShowWindow
+PS C:\> Connect-MySqlServer -Credential $dbcred -ComputerName 'localhost' -Database 'workplace'
+PS C:\> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user 'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using password: YES)""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user 'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using password: YES)""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user 'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using password: YES)""
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user 'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using password: YES)"
+Connect-MySqlServer : Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user
+'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using
+password: YES)"
+At line:1 char:1
++ Connect-MySqlServer -Credential $dbcred -ComputerName 'localhost' -Da ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-MySqlServer
+
+PS C:\> Connect-MySqlServer -Credential $dbcred -ComputerName 'localhost' 
+PS C:\> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user 'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using password: YES)""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user 'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using password: YES)""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user 'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using password: YES)""
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user 'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using password: YES)"
+Connect-MySqlServer : Exception calling "Open" with "0" argument(s): "Authentication to host 'localhost' for user
+'patzap' using method 'sha256_password' failed with message: Access denied for user 'patzap'@'localhost' (using
+password: YES)"
+At line:1 char:1
++ Connect-MySqlServer -Credential $dbcred -ComputerName 'localhost'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-MySqlServer
+
+PS C:\> Connect-MySqlServer -Credential $dbcred -ComputerName 'patzap'
+PS C:\> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts."
+Connect-MySqlServer : Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL
+hosts."
+At line:1 char:1
++ Connect-MySqlServer -Credential $dbcred -ComputerName 'patzap'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-MySqlServer
+
+PS C:\> Connect-MySqlServer -Credential $dbcred 
+PS C:\> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+>> TerminatingError(Connect-MySqlServer): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts.""
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL hosts."
+Connect-MySqlServer : Exception calling "Open" with "0" argument(s): "Unable to connect to any of the specified MySQL
+hosts."
+At line:1 char:1
++ Connect-MySqlServer -Credential $dbcred
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-MySqlServer
+

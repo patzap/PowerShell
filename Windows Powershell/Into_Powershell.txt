@@ -1,0 +1,36 @@
+Intro to Powershell
+
+Why? Will be useful if you want to learn Azure
+
+Start-Transcript -Path "C:\transcripts\transcript0.txt": Usually the first thing you type, to give you a history after you exit PowerShell
+
+syntax: verb-noun or action-object 
+
+Use the get-command function: It allows you to find specific syntaxes. Another use is to type <get-command -noun> and then type a letter with a star to search those commands. ex: get-command
+
+<Get-Help> -Force allows you to find a better explanation of the specific commands and it proper syntax. Kinda similar to the --help command in bash/terminal 
+
+<Get-Help> <command> -Examples: allows you to find an example of that command. 
+
+			You can also use the -Online command to search up additional parameters and descriptions of those commands 
+
+If you wish to understand the types of alias used you can type <get-alias> <command> to find a definition of that 
+
+<get-process> - similar to task manager or htop in linux, lists all current working process 
+
+Object: Powershell uses objects (structured data) instead of plain strings. This sets in apart from other scripting languages, such as bash 
+    Properties: The aspects and details of the object
+    Methods: actions the object can perform
+
+Piping: similar to unix, transfer first commands output into input of the other command (need to elaborate on that later)
+
+Select-Object
+
+Variables: you can assign varibles of specific commands and add a specific method to execute that command
+	Ex: $a = Get-Process Steam. Then $a.kill() to end the program 
+
+Get-History: lists all the commands that I have listed 
+
+
+
+

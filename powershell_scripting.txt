@@ -1,0 +1,83 @@
+**********************
+PowerShell transcript start
+Start time: 20191223144438
+Username: LAPTOP-TKR6M1AE\flame
+RunAs User: LAPTOP-TKR6M1AE\flame
+Configuration Name: 
+Machine: LAPTOP-TKR6M1AE (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Program Files\PowerShell\7-preview\pwsh.dll -WorkingDirectory ~
+Process ID: 21464
+PSVersion: 7.0.0-preview.6
+PSEdition: Core
+GitCommitId: 7.0.0-preview.6
+OS: Microsoft Windows 10.0.18362
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\Users\flame\Documents\Powershell\powershell_scripting.txt
+PS C:\Users\flame> get-executionpolicy
+RemoteSigned
+PS C:\Users\flame> Get-WmiObject -Showwindows
+
+Get-WmiObject: The term 'Get-WmiObject' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+[1;31mGet-WmiObject: [1;31mThe term 'Get-WmiObject' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+
+PS C:\Users\flame> Get-WmiObject -Showwindow
+
+Get-WmiObject: The term 'Get-WmiObject' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+[1;31mGet-WmiObject: [1;31mThe term 'Get-WmiObject' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+PS C:\Users\flame> Get-WmiObject -Examples -Showwindows
+
+Get-WmiObject: The term 'Get-WmiObject' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+[1;31mGet-WmiObject: [1;31mThe term 'Get-WmiObject' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+PS C:\Users\flame> mysql -u root -p
+Enter password: ************
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+PS C:\Users\flame> mysql -u root -p
+Enter password: *********
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+PS C:\Users\flame> mysql -u root -p
+Enter password: ************
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+PS C:\Users\flame> mysql -u root -p
+Enter password: *************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 18
+Server version: 8.0.18 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use workplace;
+Database changed
+mysql> select * from staff where salary > 50000;
++----------+---------+------+------+-------------------+--------------+--------+
+| staff_id | name    | age  | sex  | works_at          | date_started | salary |
++----------+---------+------+------+-------------------+--------------+--------+
+|        6 | Erina   |   16 | F    | Head Chef         | 2016-04-06   |  65000 |
+|        7 | Archer  |   30 | M    | Environmental     | 2015-06-28   |  55000 |
+|       12 | Zelda   |   16 | F    | Nursing           | 2019-02-06   |  85000 |
+|       23 | Patzap  |   26 | M    | Administration    | 2019-03-09   |  55000 |
+|       27 | Tahu    | NULL | NULL | Marketing Manager | 2016-03-15   |  75000 |
+|       28 | Soleios |  350 | M    | Paladin           | 2019-12-23   | 250000 |
++----------+---------+------+------+-------------------+--------------+--------+
+6 rows in set (0.00 sec)
+
+mysql> Terminal close -- exit!
